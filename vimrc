@@ -1,3 +1,6 @@
+call pathogen#infect()
+call pathogen#helptags()
+
 set nocompatible
 set nobackup
 set noswapfile
@@ -7,12 +10,10 @@ set ts=4
 set sw=4
 set enc=utf-8
 set fenc=utf-8
+syntax enable
+colorscheme dracula
 "behave mswin
 
-if !exists("g:syntax_on")
-	syntax enable
-  	colorscheme dracula
-endif
 
 set diffexpr=MyDiff()
 "============================================================================
@@ -77,4 +78,13 @@ if has('gui_running')
   else
     set guifont=Jetbrains_Mono:h14:cANSI
   endif
+endif
+
+if has("autocmd")
+	filetype plugin indent on
+endif
+
+if !exists("g:syntax_on")
+	syntax enable
+  	colorscheme dracula
 endif
