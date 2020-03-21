@@ -10,10 +10,8 @@ set ts=4
 set sw=4
 set enc=utf-8
 set fenc=utf-8
-syntax enable
+syntax on
 colorscheme dracula
-"behave mswin
-
 
 set diffexpr=MyDiff()
 "============================================================================
@@ -61,30 +59,12 @@ endfunction
         endif
     endfunction
 
-"============================================================================
-" applicable to gVim
-"============================================================================
-if has('gui_running')
-  au GUIEnter * simalt ~x "maximize window on startup
-  set guioptions-=T  " no toolbar
-  if has('gui_win32')
-    set nobackup
-    set guioptions-=m  "remove menu bar
-    set guioptions-=T  " no toolbar
-    set guioptions+=r  " no left scroll bar
-    set guioptions+=aA  " no visual mode
-    set guifont=Jetbrains_Mono:h14:cANSI
-    set linespace=0
-  else
-    set guifont=Jetbrains_Mono:h14:cANSI
-  endif
-endif
-
 if has("autocmd")
-	filetype plugin indent on
+  filetype plugin indent on
 endif
 
 if !exists("g:syntax_on")
-	syntax enable
-  	colorscheme dracula
+  syntax enable
+  colorscheme dracula
 endif
+
